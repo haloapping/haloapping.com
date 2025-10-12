@@ -6,6 +6,10 @@
   --white: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Use a more-intuitive box-sizing model */
 *,
 *::before,
