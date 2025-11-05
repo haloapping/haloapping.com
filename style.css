@@ -300,3 +300,26 @@ footer > h1 > a {
   color: var(--primary);
   text-decoration: none;
 }
+
+/* Under Maintenance Announcement */
+
+.maintenance {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  > h1 {
+    font-size: 3rem;
+  }
+}
+
+.img__maintenance {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
