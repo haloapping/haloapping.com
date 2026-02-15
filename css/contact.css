@@ -1,0 +1,9 @@
+main {
+  > section {
+    margin-bottom: 1rem;
+  }
+
+  > section > ul {
+    margin-left: 1.5rem;
+  }
+}
