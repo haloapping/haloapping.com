@@ -4,65 +4,135 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home | haloapping.com</title>
-    <link rel="shortcut icon" href="../images/apping.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-      rel="stylesheet"
+    <meta
+      name="description"
+      content="Apping — QA Automation Engineer specializing in financial services. Automated test solutions for web applications."
     />
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="64x64" />
+    <link
+      rel="preload"
+      as="image"
+      href="../images/apping-640.webp"
+      imagesrcset="
+        ../images/apping-320.webp 320w,
+        ../images/apping-480.webp 480w,
+        ../images/apping-640.webp 640w
+      "
+      imagesizes="(max-width: 860px) 270px, 310px"
+      fetchpriority="high"
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <link rel="stylesheet" href="../css/index.css" />
+    <script src="../js/main.js" defer></script>
   </head>
 
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <div class="container">
-      <header>
-        <h1><a href="/home">haloapping.com</a></h1>
-        <ul class="menu">
-          <li><a href="/home" class="active">Home</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/tools">Tools</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
+      <header class="site-header">
+        <a class="brand" href="../home/index.html">
+          <span class="brand-dot" aria-hidden="true"></span>
+          haloapping
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul role="list">
+            <li><a href="../home/index.html" aria-current="page">Home</a></li>
+            <li><a href="../projects/index.html">Projects</a></li>
+            <li><a href="../tools/index.html">Tools</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
+            <li><a href="../contact/index.html">Contact</a></li>
+          </ul>
+        </nav>
       </header>
 
-      <main>
-        <div class="main-home">
-          <div class="left-profile">
-            <h1>Hi I'm Apping</h1>
-            <img
-              src="./../images/apping.jpg"
-              alt="Apping profile picture"
-              width="200"
-              loading="eager"
-            />
-            <p>
-              QA Automation Engineer<br />
-              (Enemy of Developers)
+      <main id="main" tabindex="-1">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">QA Automation Engineer</p>
+            <h1>Hi, I'm <span class="mark">Apping</span>.</h1>
+            <p class="hero-lede">
+              I break software on purpose, so users don't have to. Automated
+              testing for web applications, with a soft spot for financial
+              services.
             </p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="../projects/index.html">
+                View projects <span aria-hidden="true">↗</span>
+              </a>
+              <a class="button button--ghost" href="../contact/index.html">Get in touch</a>
+            </div>
           </div>
 
-          <div class="right-profile">
-            <p>
-              QA Automation Engineer specializing in financial services with 1+
-              years of experience. Designs, develops, and maintains automated
-              test solutions for web applications.
-            </p>
-            <br />
-            <p>
-              Strong foundation in test automation frameworks, test strategy,
-              and defect detection across the software development lifecycle.
-              Experienced in collaborating with developers and product teams to
-              improve software quality, increase test coverage, and support
-              reliable releases.
-            </p>
+          <figure class="portrait">
+            <div class="portrait-frame">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ../images/apping-320.webp 320w,
+                    ../images/apping-480.webp 480w,
+                    ../images/apping-640.webp 640w
+                  "
+                  sizes="(max-width: 860px) 270px, 310px"
+                />
+                <img
+                  src="../images/apping.jpg"
+                  srcset="
+                    ../images/apping-320.jpg 320w,
+                    ../images/apping-480.jpg 480w,
+                    ../images/apping.jpg 640w
+                  "
+                  sizes="(max-width: 860px) 270px, 310px"
+                  alt="Apping profile picture"
+                  width="640"
+                  height="640"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+            <figcaption>Enemy of Developers</figcaption>
+          </figure>
+        </section>
+
+        <section class="section" aria-labelledby="about-title">
+          <p class="section-label">01 / About</p>
+          <div class="section-body">
+            <h2 id="about-title">Quality is engineered, not hoped for.</h2>
+            <div class="prose">
+              <p>
+                QA Automation Engineer specializing in financial services with
+                1+ years of experience. Designs, develops, and maintains
+                automated test solutions for web applications.
+              </p>
+              <p>
+                Strong foundation in test automation frameworks, test strategy,
+                and defect detection across the software development lifecycle.
+                Experienced in collaborating with developers and product teams
+                to improve software quality, increase test coverage, and support
+                reliable releases.
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
       </main>
 
-      <footer>
-        <p>Made with ❤️ by <a href="/home">haloapping</a></p>
+      <footer class="site-footer">
+        <p>Made with ❤️ by <a href="../home/index.html">haloapping</a></p>
       </footer>
     </div>
   </body>

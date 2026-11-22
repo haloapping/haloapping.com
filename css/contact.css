@@ -1,9 +1,52 @@
-main {
-  > section {
-    margin-bottom: 1rem;
-  }
+.contact-list {
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
 
-  > section > ul {
-    margin-left: 1.5rem;
-  }
+.contact-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: clamp(1.4rem, 4vw, 2.25rem) 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+}
+
+.contact-label {
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.contact-meta {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+}
+
+.contact-arrow {
+  font-size: 1.6rem;
+  line-height: 1;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.contact-list a:hover .contact-label,
+.contact-list a:hover .contact-arrow {
+  color: var(--accent);
+}
+
+.contact-list a:hover .contact-arrow {
+  transform: translate(4px, -4px);
 }

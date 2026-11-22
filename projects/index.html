@@ -4,88 +4,145 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects | haloapping.com</title>
-    <link rel="shortcut icon" href="../images/apping.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-      rel="stylesheet"
+    <meta
+      name="description"
+      content="Selected software projects by Apping, from backend APIs to test automation."
     />
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="64x64" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/project.css" />
+    <script src="../js/main.js" defer></script>
   </head>
 
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <div class="container">
-      <header>
-        <h1><a href="/home">haloapping.com</a></h1>
-        <ul class="menu">
-          <li><a href="/home">Home</a></li>
-          <li><a href="/projects" class="active">Projects</a></li>
-          <li><a href="/tools">Tools</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
+      <header class="site-header">
+        <a class="brand" href="../home/index.html">
+          <span class="brand-dot" aria-hidden="true"></span>
+          haloapping
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul role="list">
+            <li><a href="../home/index.html">Home</a></li>
+            <li><a href="../projects/index.html" aria-current="page">Projects</a></li>
+            <li><a href="../tools/index.html">Tools</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
+            <li><a href="../contact/index.html">Contact</a></li>
+          </ul>
+        </nav>
       </header>
 
-      <main>
-        <ul>
-          <li>
-            <b>
-              <a href="https://github.com/lyrifix/lyrifix-api" target="_blank"
-                >Lyrifix API</a
-              >
-              - Backend Application Final Project Bearmentor Batch 7
-            </b>
-            <p>
-              Fix the Lyrics. Feel the Music. Lyrifix is your all-in-one global
-              lyrics platform — made for music lovers, lyric hunters, and
-              community contributors.
-            </p>
+      <main id="main" tabindex="-1">
+        <header class="page-head">
+          <p class="eyebrow">02 / Work</p>
+          <h1>Projects</h1>
+          <p class="page-lede">
+            A few things I've built, tested, and shipped.
+          </p>
+        </header>
+
+        <ol class="project-list" role="list">
+          <li class="project">
+            <a
+              class="project-link"
+              href="https://github.com/lyrifix/lyrifix-api"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="project-body">
+                <h2>Lyrifix API</h2>
+                <span class="project-meta">
+                  Backend Application Final Project Bearmentor Batch 7
+                </span>
+                <p>
+                  Fix the Lyrics. Feel the Music. Lyrifix is your all-in-one
+                  global lyrics platform — made for music lovers, lyric
+                  hunters, and community contributors.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
           </li>
 
-          <li>
-            <b>
-              <a href="https://github.com/lyrifix/lyrifix-web" target="_blank"
-                >Lyrifix Web</a
-              >
-              - Frontend Application Final Project Bearmentor Batch 7
-            </b>
-            <p>
-              Fix the Lyrics. Feel the Music. Lyrifix is your all-in-one global
-              lyrics platform — made for music lovers, lyric hunters, and
-              community contributors.
-            </p>
+          <li class="project">
+            <a
+              class="project-link"
+              href="https://github.com/lyrifix/lyrifix-web"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="project-body">
+                <h2>Lyrifix Web</h2>
+                <span class="project-meta">
+                  Frontend Application Final Project Bearmentor Batch 7
+                </span>
+                <p>
+                  Fix the Lyrics. Feel the Music. Lyrifix is your all-in-one
+                  global lyrics platform — made for music lovers, lyric
+                  hunters, and community contributors.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
           </li>
 
-          <li>
-            <b>
-              <a
-                href="https://github.com/haloapping/qabrains-ecommerce"
-                target="_blank"
-                >QA Brains Ecommerce</a
-              >
-              - Explore Playwright, Pytest and Allure Report
-            </b>
-            <p>Explore Playwright, Pytest and Allure Report</p>
+          <li class="project">
+            <a
+              class="project-link"
+              href="https://github.com/haloapping/qabrains-ecommerce"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="project-body">
+                <h2>QA Brains Ecommerce</h2>
+                <span class="project-meta">
+                  Explore Playwright, Pytest and Allure Report
+                </span>
+                <p>Explore Playwright, Pytest and Allure Report</p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
           </li>
 
-          <li>
-            <b>
-              <a
-                href="https://github.com/haloapping/jejakmakan-api"
-                target="_blank"
-                >Jejak Makan API</a
-              >
-              - Track your all food orders
-            </b>
-            <p>Track your all food orders</p>
+          <li class="project">
+            <a
+              class="project-link"
+              href="https://github.com/haloapping/jejakmakan-api"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="project-body">
+                <h2>Jejak Makan API</h2>
+                <span class="project-meta">Track your all food orders</span>
+                <p>Track your all food orders</p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
           </li>
-        </ul>
+        </ol>
       </main>
 
-      <footer>
-        <p>Made with ❤️ by <a href="/home">haloapping</a></p>
+      <footer class="site-footer">
+        <p>Made with ❤️ by <a href="../home/index.html">haloapping</a></p>
       </footer>
     </div>
   </body>

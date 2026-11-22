@@ -3,53 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tools | haloapping.com</title>
-    <link
-      rel="shortcut icon"
-      href="./../images/apping.ico"
-      type="image/x-icon"
+    <title>Contact | haloapping.com</title>
+    <meta
+      name="description"
+      content="Get in touch with Apping on LinkedIn, X, or GitHub."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./../css/index.css" />
-    <link rel="stylesheet" href="./../css/contact.css" />
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="64x64" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+    <script src="../js/main.js" defer></script>
   </head>
 
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <div class="container">
-      <header>
-        <h1><a href="/home">haloapping.com</a></h1>
-        <ul class="menu">
-          <li><a href="/home">Home</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/tools">Tools</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/contact" class="active">Contact</a></li>
-        </ul>
+      <header class="site-header">
+        <a class="brand" href="../home/index.html">
+          <span class="brand-dot" aria-hidden="true"></span>
+          haloapping
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul role="list">
+            <li><a href="../home/index.html">Home</a></li>
+            <li><a href="../projects/index.html">Projects</a></li>
+            <li><a href="../tools/index.html">Tools</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
+            <li><a href="../contact/index.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
       </header>
 
-      <main>
-        <section>
-          <ul>
-            <li>
-              <a href="https://www.linkedin.com/in/haloapping/" target="_blank"
-                >Linkedin</a
-              >
-            </li>
-            <li><a href="https://x.com/haloapping" target="_blank">X</a></li>
-            <li>
-              <a href="https://github.com/haloapping" target="_blank">GitHub</a>
-            </li>
-          </ul>
-        </section>
+      <main id="main" tabindex="-1">
+        <header class="page-head">
+          <p class="eyebrow">05 / Contact</p>
+          <h1>Contact</h1>
+          <p class="page-lede">Find me where you already hang out.</p>
+        </header>
+
+        <ul class="contact-list" role="list">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/haloapping/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="contact-row">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-meta">in/haloapping</span>
+              </span>
+              <span class="contact-arrow" aria-hidden="true">↗</span>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://x.com/haloapping"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="contact-row">
+                <span class="contact-label">X</span>
+                <span class="contact-meta">@haloapping</span>
+              </span>
+              <span class="contact-arrow" aria-hidden="true">↗</span>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/haloapping"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="contact-row">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-meta">@haloapping</span>
+              </span>
+              <span class="contact-arrow" aria-hidden="true">↗</span>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+          </li>
+        </ul>
       </main>
 
-      <footer>
-        <p>Made with ❤️ by <a href="/home">haloapping</a></p>
+      <footer class="site-footer">
+        <p>Made with ❤️ by <a href="../home/index.html">haloapping</a></p>
       </footer>
     </div>
   </body>
