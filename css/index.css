@@ -29,12 +29,20 @@
   --ink-2: #4b4e45;
   --muted: #63665c;
   --line: #d9d4c7;
+  --line-strong: #8f8a7d;
   --accent: #13654c;
   --accent-2: #d9f56d;
   --radius: 18px;
   --max: 1140px;
   --sans: "Space Grotesk", "Helvetica Neue", Arial, system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --muted: #4b4e45;
+    --line: #8f8a7d;
+  }
 }
 
 /* ---------- Base ---------- */
@@ -65,6 +73,7 @@ body {
   font-family: var(--sans);
   font-size: 1rem;
   line-height: 1.6;
+  overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -103,6 +112,11 @@ h3 {
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 .sr-only {
@@ -181,10 +195,27 @@ main {
   box-shadow: 0 0 0 4px rgba(19, 101, 76, 0.12);
 }
 
-.site-nav ul {
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav-list {
+  position: static;
+  inset: auto;
   display: flex;
   align-items: center;
   gap: 1.75rem;
+  inline-size: auto;
+  max-inline-size: none;
+  block-size: auto;
+  max-block-size: none;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
   list-style: none;
 }
 
@@ -224,7 +255,7 @@ main {
   justify-content: center;
   min-height: 2.75rem;
   padding: 0.75rem 1rem;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: 999px;
   background: transparent;
   color: var(--ink);
@@ -489,10 +520,10 @@ main {
     flex-basis: 100%;
   }
 
-  .site-nav ul {
+  .site-nav-list {
     flex-wrap: wrap;
     gap: 0.35rem 1.25rem;
-    padding-top: 0.5rem;
+    padding-block-start: 0.5rem;
   }
 
   .site-nav a {
@@ -510,47 +541,49 @@ main {
     display: none;
   }
 
-  /* With JS, the nav collapses behind the Menu button. */
-  .js .site-header {
+  /* With Popover support, the nav collapses behind the Menu button. */
+  .nav-popover .site-header {
     flex-wrap: nowrap;
   }
 
-  .js .nav-toggle {
+  .nav-popover .nav-toggle {
     display: inline-flex;
+    anchor-name: --nav-toggle;
   }
 
-  .js .site-nav {
-    position: absolute;
-    top: calc(100% + 0.75rem);
-    right: 0;
-    left: 0;
-    z-index: 20;
-    display: none;
+  .nav-popover .site-nav {
     flex-basis: auto;
+  }
+
+  .nav-popover .site-nav-list {
+    position: fixed;
+    inset: auto;
+    inset-block-start: 4.75rem;
+    inset-block-start: anchor(--nav-toggle bottom);
+    inset-inline-end: 1rem;
+    display: none;
+    inline-size: min(80dvw, 24rem);
+    max-inline-size: calc(100dvw - 2rem);
+    block-size: auto;
+    max-block-size: calc(100dvh - 6rem);
+    margin-block-start: 0.5rem;
     padding: 0.25rem 1rem;
-    border: 1px solid var(--line);
+    overflow: auto;
+    border: 1px solid var(--line-strong);
     border-radius: 14px;
     background: var(--surface);
     box-shadow: 0 18px 40px rgba(23, 24, 20, 0.12);
   }
 
-  .js .site-nav.is-open {
+  .nav-popover .site-nav-list:popover-open {
     display: block;
   }
 
-  .js .site-nav ul {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    gap: 0;
-    padding-top: 0;
-  }
-
-  .js .site-nav li + li {
+  .nav-popover .site-nav-list li + li {
     border-top: 1px solid var(--line);
   }
 
-  .js .site-nav a {
+  .nav-popover .site-nav-list a {
     display: block;
     padding: 0.85rem 0;
   }
@@ -558,6 +591,31 @@ main {
   .section {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  .nav-popover .site-nav-list[popover] {
+    opacity: 0;
+    translate: 0 -0.4rem;
+    transition:
+      opacity 0.18s ease,
+      translate 0.18s ease,
+      display 0.18s,
+      overlay 0.18s;
+    transition-behavior: allow-discrete;
+  }
+
+  .nav-popover .site-nav-list[popover]:popover-open {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  @starting-style {
+    .nav-popover .site-nav-list[popover]:popover-open {
+      opacity: 0;
+      translate: 0 -0.4rem;
+    }
   }
 }
 
@@ -574,6 +632,13 @@ main {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.4rem;
+  }
+}
+
+@media (forced-colors: active) {
+  .brand-dot,
+  .site-nav a[aria-current="page"]::after {
+    background: LinkText;
   }
 }
 

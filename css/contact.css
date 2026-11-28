@@ -50,3 +50,9 @@
 .contact-list a:hover .contact-arrow {
   transform: translate(4px, -4px);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-list a:hover .contact-arrow {
+    transform: none;
+  }
+}

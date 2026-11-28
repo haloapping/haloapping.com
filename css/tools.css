@@ -79,3 +79,17 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-card {
+    transition: border-color 0.2s ease;
+  }
+
+  .tool-card:hover {
+    transform: none;
+  }
+
+  .tool-card::before {
+    transition: none;
+  }
+}

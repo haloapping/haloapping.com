@@ -1,34 +1,21 @@
 const toggle = document.querySelector(".nav-toggle");
-const nav = document.querySelector("#site-nav");
+const navList = document.querySelector("#site-nav-list");
 
-if (toggle && nav) {
-  const setOpen = (open) => {
-    toggle.setAttribute("aria-expanded", String(open));
-    nav.classList.toggle("is-open", open);
+if (toggle && navList && Object.hasOwn(HTMLElement.prototype, "popover")) {
+  const narrow = window.matchMedia("(max-width: 760px)");
+
+  const sync = () => {
+    if (narrow.matches) {
+      navList.setAttribute("popover", "auto");
+    } else {
+      navList.removeAttribute("popover");
+    }
   };
 
-  toggle.addEventListener("click", () => {
-    setOpen(toggle.getAttribute("aria-expanded") !== "true");
+  navList.addEventListener("toggle", (event) => {
+    toggle.setAttribute("aria-expanded", String(event.newState === "open"));
   });
 
-  nav.addEventListener("click", (event) => {
-    if (event.target.closest("a")) setOpen(false);
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".site-header")) setOpen(false);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && nav.classList.contains("is-open")) {
-      setOpen(false);
-      toggle.focus();
-    }
-  });
-
-  window
-    .matchMedia("(min-width: 761px)")
-    .addEventListener("change", (event) => {
-      if (event.matches) setOpen(false);
-    });
+  sync();
+  narrow.addEventListener("change", sync);
 }
